@@ -1,0 +1,19 @@
+service: wSign-thumbnail
+
+provider:
+  name: aws
+  stage: thumbnail
+  region: ap-northeast-1
+  profile: myProfile
+
+package:
+  artifact: aws-lambda-s3-thumbnail.zip
+
+functions:
+  thumbnail:
+    handler: handler.handler
+    name: thumbnail
+    description: thumbnail upload image
+    runtime: python2.7
+    memorySize: 256
+    timeout: 90
